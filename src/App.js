@@ -4,6 +4,8 @@ import GagList from './application/gagList';
 import GagPage from './application/gagPage';
 import {GetAllGags} from './application/connectionToServer';
 import CreateGagPage from './application/createGagPage';
+import './application/style/topBar.css';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,9 +22,9 @@ function App() {
     <div className="App">
       <Router>
         <div>
-          <nav style={{ margin: 10 }}>
-            <Link to="/">Home</Link>
-            <Link to="/createGag">CreateGAG</Link>
+          <nav style={{ margin: 10 }} class="topnav">
+            <Link to="/" class="herfTopBar">Home</Link>
+            <Link to="/createGag" class="herfTopBar">CreateGAG</Link>
           </nav>
           <Switch>
             <Route path="/createGag">

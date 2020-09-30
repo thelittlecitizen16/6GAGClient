@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useHistory } from "react-router-dom";
 import { GetAllGags } from './connectionToServer';
+import './style/gag.css';
 
 
 
@@ -23,7 +24,7 @@ function GagList(props) {
         });
     }
 
-    var renderGagas = props.gags.map(gag => <Col onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"]} /></Col>);
+    var renderGagas = props.gags.map(gag => <Col md={3} className="colGag" onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"]} /></Col>);
 
     return (
         <Container>

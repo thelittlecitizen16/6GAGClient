@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style/gag.css';
 const mystyle = {
   
   };
@@ -7,7 +7,7 @@ const mystyle = {
 function Gag(props)
 {
     return (
-         <div>
+         <div class="gag">
              <h1>{props.title}</h1>
              <p>{props.text}</p>
              <img></img>
