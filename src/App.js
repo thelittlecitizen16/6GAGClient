@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,  { useState }  from 'react';
 import './App.css';
+import GagList from './application/gagList';
+
 
 function App() {
+
+  const [gags, setGags] = useState([{"title":"afek","text":"aaaa"},{"title":"afek2","text":"bbbb"},{"title":"afek3","text":"ccc"}]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GagList gags={gags} setGags={setGags}/>
     </div>
   );
 }
