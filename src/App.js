@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import GagList from './application/gagList';
 import GagPage from './application/gagPage';
-import GetAllGags from './application/connectionToServer';
+import {GetAllGags} from './application/connectionToServer';
+import CreateGagPage from './application/createGagPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,11 +14,7 @@ import {
 
 
 function App() {
-
   const [gags, setGags] = useState([]);
-  GetAllGags(setGags);
-
- 
 
   return (
     <div className="App">
@@ -25,13 +22,17 @@ function App() {
         <div>
           <nav style={{ margin: 10 }}>
             <Link to="/">Home</Link>
+            <Link to="/createGag">CreateGAG</Link>
           </nav>
           <Switch>
+            <Route path="/createGag">
+              <CreateGagPage gags={gags} setGags={setGags}/>
+            </Route>
             <Route path="/gagPage">
               <GagPage />
             </Route>
-            <Route path="/">
-              <GagList gags={gags} setGags={setGags} />
+            <Route path="/" >
+            <GagList gags={gags} setGags={setGags} />
             </Route>
           </Switch>
         </div>

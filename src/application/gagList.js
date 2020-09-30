@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Gag from './gag';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useHistory, Link , Route, Redirect} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { GetAllGags } from './connectionToServer';
 
 
 
 function GagList(props) {
+    useEffect(() => {
+         GetAllGags(props.setGags)   
+    },[]);
+
+
     const history = useHistory();
 
     function Render(gag) {
