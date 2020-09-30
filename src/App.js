@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
 import GagList from './application/gagList';
-import GagPage from './application/gagPage'
+import GagPage from './application/gagPage';
+import GetAllGags from './application/connectionToServer';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +13,11 @@ import {
 
 
 function App() {
-  const [gags, setGags] = useState([{ "title": "afek", "text": "aaaa" }, { "title": "afek2", "text": "bbbb" }, { "title": "afek3", "text": "ccc" }]);
+
+  const [gags, setGags] = useState([]);
+  GetAllGags(setGags);
+
+ 
 
   return (
     <div className="App">
