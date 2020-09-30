@@ -4,7 +4,6 @@ const mystyle = {
   
   };
 
-
 function Gag(props)
 {
     return (
