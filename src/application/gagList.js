@@ -13,7 +13,6 @@ function GagList(props) {
          GetAllGags(props.setGags)   
     },[]);
 
-
     const history = useHistory();
 
     function Render(gag) {
@@ -24,7 +23,7 @@ function GagList(props) {
         });
     }
 
-    var renderGagas = props.gags.map(gag => <Col md={3} className="colGag" onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"]} /></Col>);
+    var renderGagas = props.gags.map(gag => <Col md={3} className="colGag" onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"] }  file={gag["file"] }/></Col>);
 
     return (
         <Container>
