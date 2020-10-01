@@ -1,41 +1,13 @@
 import React, { useState } from 'react';
 import './style/gag.css';
-import { AddLikeToGAG } from './connectionToServer';
+import { AddLikeToGAG,RemoveLikeToGAG } from './connectionToServer';
 import { BsFillHeartFill, BsHeart } from "react-icons/bs";
 import { AddLikeToPost, IsPostLiked, RemoveLikeToPost } from './handleLocalStorage';
-
+import Likes from './Likes/handleLikes'
 
 function Gag(props) {
+   const [postLiked, setPostLiked] = useState(IsPostLiked(props._id));
 
-  function AddLike(id) {
-    console.log(IsPostLiked(id));
-
-    AddLikeToPost(id);
-    AddLikeToGAG(id);
-
-    setPostLiked(IsPostLiked(id));
-  }
-
-  function UnLike(id) {
-    RemoveLikeToPost(id);
-    console.log(IsPostLiked(props._id));
-    //AddLikeToGAG(id);
-    setPostLiked(IsPostLiked());
-  }
-
-  const [postLiked, setPostLiked] = useState(IsPostLiked(props._id));
-
-  let likeButton;
-  console.log(postLiked);
-  if (postLiked) {
-    likeButton = (
-      likeButton = <BsFillHeartFill class="float-right" onClick={() => UnLike(props._id)} />
-    );
-  }
-  else {
-    likeButton = (<BsHeart class="float-right" onClick={() => AddLike(props._id)} />
-    );
-  }
 
   function GetPicture() {
     if (props.file == undefined) {
@@ -54,7 +26,7 @@ function Gag(props) {
       </div>
       <div class="card-footer text-left">
         <small>Liked By : {props.likes}</small>
-        {likeButton}
+       <Likes _id={props._id} postLiked={postLiked} setPostLiked={setPostLiked}/>
       </div>
     </div>
   );

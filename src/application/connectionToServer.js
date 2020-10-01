@@ -28,7 +28,7 @@ async function CreateNewGAG() {
 }
 
 async function AddLikeToGAG(id) {
-
+ console.log("liked to post");
   var formData = new FormData()
   formData.append('_id', id);
 
@@ -37,5 +37,15 @@ async function AddLikeToGAG(id) {
     });
 }
 
+async function RemoveLikeToGAG(id) {
 
-export { GetAllGags, CreateNewGAG, AddLikeToGAG };
+  var formData = new FormData()
+  formData.append('_id', id);
+
+  await axios.post(config.serverPath + `api/unLike`, formData)
+    .then(res => {
+    });
+}
+
+
+export { GetAllGags, CreateNewGAG, AddLikeToGAG,RemoveLikeToGAG };
