@@ -8,7 +8,7 @@ function GagPage() {
 
     return (
         <div class ="gagShow">
-            <Gag title={location.state.name} text={location.state.text} file={location.state.file}/>
+            <Gag title={location.state.title} text={location.state.text} name={location.state.name} file={location.state.file}/>
         </div>
     );
 }

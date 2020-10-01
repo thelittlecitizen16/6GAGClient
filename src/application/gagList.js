@@ -19,11 +19,11 @@ function GagList(props) {
         history.push({
             pathname: '/gagPage',
             search: '?query=abc',
-            state: { name: gag["title"], text: gag["text"] ,file: gag["file"] }
+            state: { title: gag["title"], text: gag["text"],name: gag["name"] ,file: gag["file"] }
         });
     }
 
-    var renderGagas = props.gags.map(gag => <Col md={3} className="colGag" onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"] }  file={gag["file"] }/></Col>);
+    var renderGagas = props.gags.map(gag => <Col md={3} className="colGag" onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"] }  name={gag["name"] } file={gag["file"] }/></Col>);
 
     return (
         <Container>

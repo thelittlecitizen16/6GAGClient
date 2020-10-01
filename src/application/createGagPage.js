@@ -18,9 +18,6 @@ function CreateGagPage(props) {
         <div id="GagForm">
                 <h1 class="creatGag">Create GAG</h1>
                 <div>
-                    <input class="creatGag" id="name" placeholder="Enter Name..." ></input>
-                </div>
-                <div>
                     <input class="creatGag" id="title" placeholder="Enter Title..." ></input>
                 </div>
                 <div>

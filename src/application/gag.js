@@ -14,6 +14,7 @@ function Gag(props) {
     <div class="gag">
       <h1>{props.title}</h1>
       <p>{props.text}</p>
+      <p>Created By:{props.name}</p>
       <div>{GetPicture()}</div>
     </div>
   );
