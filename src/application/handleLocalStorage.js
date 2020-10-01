@@ -9,4 +9,9 @@ function GetName()
     return localStorage.getItem('names');
 }
 
-export { AddNameLogIN, GetName };
+function Remove()
+{
+    localStorage.removeItem('names');
+}
+
+export { AddNameLogIN, GetName,Remove };

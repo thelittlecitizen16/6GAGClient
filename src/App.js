@@ -18,7 +18,7 @@ function App() {
 
   if (name !== null) {
     questions = (
-     <MainApp gags={gags} setGags={setGags}/>
+     <MainApp gags={gags} setGags={setGags} setName={setName}/>
     )
   }
   else{
