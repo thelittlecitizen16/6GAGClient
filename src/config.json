@@ -1,3 +1,4 @@
 {
-    "serverPath" : "http://localhost:8000/"
+    "serverPath" : "http://localhost:8000/",
+    "popularNumber" : 5
 }
