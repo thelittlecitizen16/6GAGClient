@@ -25,9 +25,9 @@ function MainApp(props) {
         <Router>
           <div>
             <nav class="topnav">
-              <Link to="/" class="herfTopBar">Home</Link>
-              <Link to="/createGag" class="herfTopBar">CreateGAG</Link>
-              <Link onClick={()=>LogOut()} class="herfTopBar">LogOut</Link>
+              <Link to="/" class="herfTopBar left">Home</Link>
+              <Link to="/createGag" class="herfTopBar left">CreateGAG</Link>
+              <Link onClick={()=>LogOut()} class="herfTopBar right">LogOut</Link>
             </nav>
             <Switch>
               <Route path="/createGag">
