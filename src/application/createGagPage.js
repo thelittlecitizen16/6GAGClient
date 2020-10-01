@@ -15,21 +15,18 @@ function CreateGagPage(props) {
     }
 
     return (
-        <div id="GagForm">
-                <h1 class="creatGag">Create GAG</h1>
-                <div>
+
+        <div id="GagForm" class="login-page">
+            <div class="form">
+                <form class="login-form">
+                    <h1 class="creatGag">Create GAG</h1>
                     <input class="creatGag" id="title" placeholder="Enter Title..." ></input>
-                </div>
-                <div>
                     <input class="creatGag" id="text" placeholder="Enter Text..." ></input>
-                </div>
-                <div>
                     <input type="file" id="file" class="creatGag" name="file"></input>
-                </div>
-                <div>
                     <button class="create creatGag" onClick={() => { Render() }}>Create</button>
-                </div>
-        </div >
+                </form>
+            </div>
+        </div>
     );
 }
 //

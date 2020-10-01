@@ -1,7 +1,6 @@
 import React from 'react';
 import './style/gag.css';
 
-
 function Gag(props) {
   function GetPicture() {
     if (props.file == undefined) {
