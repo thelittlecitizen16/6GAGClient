@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './style/gag.css';
-import { AddLikeToGAG,RemoveLikeToGAG } from './connectionToServer';
+import { AddLikeToGAG, RemoveLikeToGAG } from './connectionToServer';
 import { BsFillHeartFill, BsHeart } from "react-icons/bs";
 import { AddLikeToPost, IsPostLiked, RemoveLikeToPost } from './handleLocalStorage';
 import Likes from './Likes/handleLikes'
 
 function Gag(props) {
-   const [postLiked, setPostLiked] = useState(IsPostLiked(props._id));
+  const [postLiked, setPostLiked] = useState(IsPostLiked(props._id));
 
 
   function GetPicture() {
@@ -24,10 +24,7 @@ function Gag(props) {
         <p class="card-text">Created By:{props.name}</p>
         {GetPicture()}
       </div>
-      <div class="card-footer text-left">
-        <small>Liked By : {props.likes}</small>
-       <Likes _id={props._id} postLiked={postLiked} setPostLiked={setPostLiked}/>
-      </div>
+        <Likes likes={props.likes} _id={props._id} postLiked={postLiked} setPostLiked={setPostLiked} />
     </div>
   );
 }

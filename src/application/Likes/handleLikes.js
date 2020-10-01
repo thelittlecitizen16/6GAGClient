@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../style/gag.css';
 import { AddLikeToGAG, RemoveLikeToGAG } from '../connectionToServer';
 import { BsFillHeartFill, BsHeart } from "react-icons/bs";
@@ -11,6 +11,7 @@ function Likes(props) {
         AddLikeToPost(id);
         AddLikeToGAG(id);
         props.setPostLiked(IsPostLiked(id));
+       
     }
 
     function UnLike(id) {
@@ -33,10 +34,10 @@ function Likes(props) {
     }
 
     return (
-        <div>
+        <div class="card-footer text-left">
+            <small>Liked By : {props.likes}</small>
             {likeButton}
         </div>
-
     );
 }
 
