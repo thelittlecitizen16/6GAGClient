@@ -27,4 +27,15 @@ async function CreateNewGAG() {
     });
 }
 
-export { GetAllGags, CreateNewGAG };
+async function AddLikeToGAG(id) {
+
+  var formData = new FormData()
+  formData.append('_id', id);
+
+  await axios.post(config.serverPath + `api/addLike`, formData)
+    .then(res => {
+    });
+}
+
+
+export { GetAllGags, CreateNewGAG, AddLikeToGAG };

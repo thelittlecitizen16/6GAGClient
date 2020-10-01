@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from "react-router-dom";
 import { Row, Col } from 'react-bootstrap';
+import { BsFillHeartFill } from "react-icons/bs";
 
 import Gag from './gag';
 
@@ -12,7 +13,7 @@ function GagPage() {
         <div class="gagShow">
             <Row className="justify-content-md-center">
                 <Col md={3}>
-                    <Gag title={location.state.title} text={location.state.text} name={location.state.name} file={location.state.file} />
+                    <Gag title={location.state.title} text={location.state.text} name={location.state.name} file={location.state.file} _id={location.state._id} likes={location.state.likes} />
                 </Col>
             </Row>
 
