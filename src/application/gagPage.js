@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from "react-router-dom";
 import { Row, Col } from 'react-bootstrap';
-import { BsFillHeartFill } from "react-icons/bs";
 
 import Gag from './gag';
 

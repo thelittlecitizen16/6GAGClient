@@ -1,4 +1,3 @@
-import React from 'react';
 import axios from 'axios';
 import config from '../config.json'
 import { GetName } from './handleLocalStorage';
@@ -28,7 +27,6 @@ async function CreateNewGAG() {
 }
 
 async function AddLikeToGAG(id) {
- console.log("liked to post");
   var formData = new FormData()
   formData.append('_id', id);
 

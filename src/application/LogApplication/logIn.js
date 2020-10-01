@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './logIn.css';
+
 function LogIn(props) {
-
-
     return (
         <div class="login-page">
             <div class="form">

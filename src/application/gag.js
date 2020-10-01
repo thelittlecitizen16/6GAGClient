@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import './style/gag.css';
-import { AddLikeToGAG, RemoveLikeToGAG } from './connectionToServer';
-import { BsFillHeartFill, BsHeart } from "react-icons/bs";
-import { AddLikeToPost, IsPostLiked, RemoveLikeToPost } from './handleLocalStorage';
+import { IsPostLiked } from './handleLocalStorage';
 import Likes from './Likes/handleLikes'
 
 function Gag(props) {
   const [postLiked, setPostLiked] = useState(IsPostLiked(props._id));
 
-
   function GetPicture() {
-    if (props.file == undefined) {
+    if (props.file === undefined) {
       return <p>No Picture</p>
     }
     return <img class="img card-img" alt="Card image" src={`data:image/jpeg;base64,${props.file}`} />

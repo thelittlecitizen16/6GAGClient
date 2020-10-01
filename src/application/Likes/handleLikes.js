@@ -4,24 +4,22 @@ import { AddLikeToGAG, RemoveLikeToGAG } from '../connectionToServer';
 import { BsFillHeartFill, BsHeart } from "react-icons/bs";
 import { AddLikeToPost, IsPostLiked, RemoveLikeToPost } from '../handleLocalStorage';
 
-
 function Likes(props) {
 
     function AddLike(id) {
         AddLikeToPost(id);
         AddLikeToGAG(id);
         props.setPostLiked(IsPostLiked(id));
-       
     }
 
     function UnLike(id) {
         RemoveLikeToPost(id);
-        console.log(IsPostLiked(props._id));
         RemoveLikeToGAG(id);
-        props.setPostLiked(IsPostLiked());
+        props.setPostLiked(IsPostLiked(id));
     }
 
     let likeButton;
+    props.setPostLiked(IsPostLiked(props._id));
 
     if (props.postLiked) {
         likeButton = (

@@ -1,11 +1,9 @@
 import React from 'react';
 import MostPopular from './gagsList/mostPopular';
 import HomePage from './gagsList/homePage';
-
 import GagPage from './gagPage';
 import CreateGagPage from './createGagPage';
 import { Remove, GetName } from './handleLocalStorage';
-
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,9 +16,8 @@ function MainApp(props) {
     function LogOut() {
         Remove();
         props.setName(GetName());
-        console.log("logOut")
-
     }
+    
     return (
         <div className="App">
             <Router>

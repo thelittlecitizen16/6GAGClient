@@ -3,11 +3,10 @@ import { CreateNewGAG } from './connectionToServer';
 import { useHistory } from "react-router-dom";
 import './style/createGAG.css';
 
-
 function CreateGagPage(props) {
     const history = useHistory();
 
-    function Render() {
+    function CreateGag() {
         CreateNewGAG();
         history.push({
             pathname: '/'
@@ -15,7 +14,6 @@ function CreateGagPage(props) {
     }
 
     return (
-
         <div id="GagForm" class="login-page">
             <div class="form">
                 <form class="login-form">
@@ -23,11 +21,11 @@ function CreateGagPage(props) {
                     <input class="creatGag" id="title" placeholder="Enter Title..." ></input>
                     <input class="creatGag" id="text" placeholder="Enter Text..." ></input>
                     <input type="file" id="file" class="creatGag" name="file"></input>
-                    <button class="create creatGag" onClick={() => { Render() }}>Create</button>
+                    <button class="create creatGag" onClick={() => { CreateGag() }}>Create</button>
                 </form>
             </div>
         </div>
     );
 }
-//
+
 export default CreateGagPage;
