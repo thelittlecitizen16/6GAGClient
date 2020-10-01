@@ -12,6 +12,7 @@
 .card{
     border: 2px solid lightseagreen!important;
     height: 267px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .card-header{
