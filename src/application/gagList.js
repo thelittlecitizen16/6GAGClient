@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import Gag from './gag';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,7 +22,6 @@ function GagList(props) {
             state: { title: gag["title"], text: gag["text"],name: gag["name"] ,file: gag["file"], _id: gag["_id"],likes: gag["likes"] }
         });
     }
-    console.log(props.gags);
     var renderGagas = props.gags.map(gag => <Col md={3} className="colGag" onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"] }  name={gag["name"] } file={gag["file"] } _id={gag["_id"] }  likes={gag["likes"] }/></Col>);
 
     return (

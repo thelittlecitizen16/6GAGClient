@@ -1,6 +1,6 @@
 import React from 'react';
-import GagList from './gagList';
-import MostPopular from './mostPopular';
+import MostPopular from './gagsList/mostPopular';
+import HomePage from './gagsList/homePage';
 
 import GagPage from './gagPage';
 import CreateGagPage from './createGagPage';
@@ -42,7 +42,7 @@ function MainApp(props) {
                             <GagPage />
                         </Route>
                         <Route path="/" >
-                            <GagList gags={props.gags} setGags={props.setGags} />
+                            <HomePage gags={props.gags} setGags={props.setGags} />
                         </Route>
                     </Switch>
                 </div>
