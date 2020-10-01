@@ -7,7 +7,8 @@ function LogIn(props) {
         <div class="login-page">
             <div class="form">
                 <form class="login-form">
-                    <input  id="name" type="text" placeholder="username" />
+                    <h1>LogIn</h1>
+                    <input id="name" type="text" placeholder="username" />
                     <button onClick={() => { props.Render() }}>login</button>
                 </form>
             </div>

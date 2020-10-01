@@ -8,11 +8,12 @@ import './style/gag.css';
 
 
 
-function GagList(props) {
+function MostPopular(props) {
     useEffect(() => {
          GetAllGags(props.setGags)   
     },[]);
 
+    console.log("enter")
     const history = useHistory();
 
     function Render(gag) {
@@ -22,8 +23,11 @@ function GagList(props) {
             state: { title: gag["title"], text: gag["text"],name: gag["name"] ,file: gag["file"], _id: gag["_id"],likes: gag["likes"] }
         });
     }
-    console.log(props.gags);
-    var renderGagas = props.gags.map(gag => <Col md={3} className="colGag" onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"] }  name={gag["name"] } file={gag["file"] } _id={gag["_id"] }  likes={gag["likes"] }/></Col>);
+    let mostPopular = props.gags.sort((a, b) => parseFloat(a["likes"]) - parseFloat(["likes"]));
+    console.log(props.gags.sort((a, b) => b["likes"] - a["likes"]));
+    mostPopular= mostPopular.slice(0,5);
+    console.log(mostPopular);
+    var renderGagas = mostPopular.map(gag => <Col md={3} className="colGag" onClick={() => { Render(gag) }}><Gag title={gag["title"]} text={gag["text"] }  name={gag["name"] } file={gag["file"] } _id={gag["_id"] }  likes={gag["likes"] }/></Col>);
 
     return (
         <Container>
@@ -35,4 +39,4 @@ function GagList(props) {
     );
 }
 
-export default GagList;
+export default MostPopular;

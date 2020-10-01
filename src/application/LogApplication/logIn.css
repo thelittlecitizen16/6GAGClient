@@ -17,6 +17,7 @@
   margin: 0 0 15px;
   padding: 15px;
   font-size: 14px;
+
 }
 .form button {
   font-family: "Roboto", sans-serif;
@@ -30,4 +31,8 @@
 }
 .form button:hover,.form button:active,.form button:focus {
   background: lightgrey;
+}
+
+h1{
+    text-align: center;
 }
