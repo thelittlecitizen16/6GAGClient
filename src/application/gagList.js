@@ -19,7 +19,7 @@ function GagList(props) {
         history.push({
             pathname: '/gagPage',
             search: '?query=abc',
-            state: { name: gag["title"], text: gag["text"] }
+            state: { name: gag["title"], text: gag["text"] ,file: gag["file"] }
         });
     }
 
